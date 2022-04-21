@@ -16,14 +16,14 @@ function App() {
     setNg(false);
   }
   return (
-    <div className='p-0 m-0 h-full p-3 grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 
+    <div className='p-0 m-0 h-full grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 
     xl:grid-cols-2 gap-3 bg-gray-100'>
 {ng? 
          <div className="flex place-content-end col-start-3 mr-2">
 
        </div>
       :
-      <div className="h-full p-2 col-start-3 flex place-content-center ">
+      <div className="h-full p-2 col-start-3 flex place-content-center mt-4 mb-4 ">
         <button className="h-12 w-24 ml-4 bg-green-400 text-white text-bold text-center 
                       font-mono rounded-lg font-bold shadow-lg hover:h-14 hover:w-28 transition-all 
                       duration-200 ease-linear" onClick={showplayers} >
@@ -32,11 +32,9 @@ function App() {
       </div>
      
 }
-      <div className=" fixed top-0 left-0 col-start-1 ">
-     
-      </div>
+    
 
-      {ply? <div className="h-full p-2 col-start-3">
+      {ply? <div className="h-full p-2 col-start-3 mr-6">
         <div className="grid grid-cols-3 w-70 mb-8 bg-sky-400 text-white pt-2 pb-2 text-bold 
                         shadow-lg place-self-center text-center font-bold font-mono rounded-full">
             <div className="col-start-2 ">
@@ -56,7 +54,7 @@ function App() {
         <Player  name={'Player 4'} />
         
       </div> :
-       <div className="flex place-content-end col-start-3 mr-2">
+       <div className="flex place-content-end col-start-3 mr-2 mb-4">
        <p className="self-end font-mono font-semibold ">Click to Start a Match</p>
      </div>
 

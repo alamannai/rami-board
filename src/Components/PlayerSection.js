@@ -20,7 +20,7 @@ function PlayerSection(props) {
     return (
       <div className=" grid grid-cols-3 items-center h-24 gap-2 ">
        <div className="flex font-bold col-start-1 h-full w-32 p-2 " >
-          <p className="self-center mb-2 text-gray-200 font-mono ml-2 ">{props.name}</p>
+          <p className="self-center mb-2 text-gray-100 font-mono ml-2 ">{props.name}</p>
          </div>
         
        
