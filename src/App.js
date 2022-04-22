@@ -2,10 +2,12 @@ import './App.css';
 import Player from './Components/Player';
 import Bar from './Components/Bar/Bar';
 import React, { useState } from "react";
+import { useSelector } from 'react-redux' ;
 
 function App() {
   const [ply, setPly] = useState(false);
   const [ng, setNg] = useState(false);
+  const playerName = useSelector((store) => store.cart.playerName);
 
   function showplayers(){
     setPly(true);
@@ -48,11 +50,7 @@ function App() {
               </button>
             </div>
         </div>
-        <Player  name={'Player 1'} />
-        <Player  name={'Player 2'} />
-        <Player  name={'Player 3'} />
-        <Player  name={'Player 4'} />
-        
+        <Player  name={playerName} />
       </div> :
        <div className="flex place-content-end col-start-3 mr-2 mb-4">
        <p className="self-end font-mono font-semibold ">Click to Start a Match</p>

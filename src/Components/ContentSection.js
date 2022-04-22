@@ -45,7 +45,7 @@ function resetClicked(){
         <div className="col-start-3 flex place-content-end h-full ">
 
           <div className=" w-12 h-8 flex place-content-center self-center text-center mr-8">
-          <p className="self-center text-cyan-200 font-semibold animate-bounce text-xl font-mono">{score}</p>
+          <p className="self-center text-cyan-200 font-semibold text-xl font-mono">{score}</p>
           </div>
 
 

@@ -6,7 +6,6 @@ import { ImCancelCircle } from "react-icons/im";
 
 function PlayerSection(props) {
     const [edit, setEdit] = useState(false);
-    const [name, setName] = useState('Player');
 
     function hundleClicked(){
          setEdit(true);
@@ -16,11 +15,14 @@ function PlayerSection(props) {
        
         setEdit(false);
    }
+   function changePlayerName(){
+       
+ }
 
     return (
       <div className=" grid grid-cols-3 items-center h-24 gap-2 ">
        <div className="flex font-bold col-start-1 h-full w-32 p-2 " >
-          <p className="self-center mb-2 text-gray-100 font-mono ml-2 ">{props.name}</p>
+          <p className="self-center mb-2 text-gray-100 font-mono ml-4 ">{props.name}</p>
          </div>
         
        
@@ -38,7 +40,7 @@ function PlayerSection(props) {
                 <input type="text" className=" rounded-lg self-end mb-2 h-10 w-26 py-1 px-2 text-grey-darkest" 
                 placeholder="Change Player Name"/>
                 </div>
-                <div className="flex place-content-end">
+                <div className="flex place-content-end ml-4">
                 <button className="h-8 w-8 bg-white font-bold text-center rounded-lg " >
                    <GrUpdate className="m-auto place-self-center color-white" />
                 </button>
