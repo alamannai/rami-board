@@ -16,12 +16,6 @@ function subClicked(){
   setVl(0);
 
 }
-function resetClicked(){
-  alert("Are you sure ?");
-  setScore(0);
-  setVl(0);
-
-}
     return (
       <div className="grid grid-cols-3 w-full gap-2 mb-4 ">
         <div className="flex col-start-1 h-full col-span-2 place-content-center mb-2 ml-6">

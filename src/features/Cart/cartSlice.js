@@ -16,7 +16,7 @@ const cartSlice = createSlice({
     initialState,
     reducers:{
         changeName : (state,{payload}) => {
-            const newName =  payload.pn ;
+            const newName =  payload.playerName ;
             const cartItem = state.cartItems.find((item) => item.id === payload.id);
             cartItem.name = newName;
         }
