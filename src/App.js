@@ -1,7 +1,7 @@
 import './App.css';
 import Player from './Components/Player';
 import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 function App() {
