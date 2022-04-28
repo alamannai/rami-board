@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import { GrUpdate } from "react-icons/gr";
 import { ImCancelCircle } from "react-icons/im";
-
+import { changeName } from "../features/Cart/cartSlice";
+import { useDispatch } from 'react-redux' ;
 
 function PlayerSection(props) {
     const [edit, setEdit] = useState(false);
-
+    const [pn, setPn] = useState('');
+    const dispatch = useDispatch();
+    const id = props.id;
     function hundleClicked(){
          setEdit(true);
 
@@ -15,9 +18,7 @@ function PlayerSection(props) {
        
         setEdit(false);
    }
-   function changePlayerName(){
-       
- }
+ 
 
     return (
       <div className=" grid grid-cols-3 items-center h-24 gap-2 ">
@@ -38,10 +39,13 @@ function PlayerSection(props) {
             <div className="col-start-2 col-span-2 p-2 w-full">
               <div className="flex place-content-end">
                 <input type="text" className=" rounded-lg self-end mb-2 h-10 w-26 py-1 px-2 text-grey-darkest" 
-                placeholder="Change Player Name"/>
+                placeholder="Change Player Name" 
+                onChange={event => setPn(event.target.value)}
+                value={pn}/>
                 </div>
                 <div className="flex place-content-end ml-4">
-                <button className="h-8 w-8 bg-white font-bold text-center rounded-lg " >
+                <button className="h-8 w-8 bg-white font-bold text-center rounded-lg "
+                onClick={()=> {dispatch(changeName({pn,id}))}} >
                    <GrUpdate className="m-auto place-self-center color-white" />
                 </button>
                 <button className="h-8 w-8 ml-2 bg-white text-black font-bold text-center rounded-lg " 
