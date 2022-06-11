@@ -4,12 +4,14 @@ import { GrUpdate } from "react-icons/gr";
 import { ImCancelCircle } from "react-icons/im";
 import { changeName } from "../features/Cart/cartSlice";
 import { useDispatch } from 'react-redux' ;
+import axios from 'axios';
 
 function PlayerSection(props) {
     const [edit, setEdit] = useState(false);
     const [playerName, setPlayerName] = useState('');
     const dispatch = useDispatch();
     const id = props.id;
+
     function hundleClicked(){
          setEdit(true);
 
@@ -18,7 +20,9 @@ function PlayerSection(props) {
        
         setEdit(false);
    }
- 
+   const deleteMemberHandler = (name) => {
+      axios.delete(`http://localhost:8000/api/members/${name}`)
+          .then(res => console.log(res.data)) }
 
     return (
       <div className=" grid grid-cols-3 items-center h-24 gap-2 ">
@@ -28,12 +32,16 @@ function PlayerSection(props) {
         
        
         { edit === false ? 
-            <div className="col-start-3 p-4 flex place-content-end items-center h-full " >
+            <div className="col-start-3 p-2 flex place-content-end items-center h-full relative" >
             <button className="self-start h-8 w-8 bg-sky-600 font-semibold text-center rounded-lg 
                         shadow-lg text-white" 
                     onClick={hundleClicked}>
                       <IoSettingsSharp className="m-auto place-self-center" />
             </button>
+            <button 
+                className="absolute bottom-2 h-8 w-8 bg-red-400 font-semibold text-center rounded-lg 
+                shadow-lg text-white" onClick={() => deleteMemberHandler(props.name)} >X</button>
+
             </div>
             : 
             <div className="col-start-2 col-span-2 p-2 w-full">

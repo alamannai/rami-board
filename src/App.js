@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './Components/Home';
 import Stats from './Components/Stats';
+import Live from './Components/Live';
 import SharedLayout from './Components/SharedLayout';
 import React, { useState, useEffect } from "react";
 import { useSelector } from 'react-redux';
@@ -90,6 +91,7 @@ function App() {
           <Route path='/' element={<SharedLayout />} >
             <Route index element={<Home data={mlist} />} />
             <Route path="stats" element={<Stats />} />
+            <Route path="live" element={<Live />} />
           </Route>
         </Routes>
       </BrowserRouter>
