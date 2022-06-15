@@ -6,7 +6,7 @@ function Nav() {
 
     return (
       <>
-        <ul className='flex flew-row gap-4'>
+        <ul className='flex flew-row gap-4 ml-4'>
           <li className=''>
             <Link to="/">
                 <button className='w-24' onClick={() => {setIsSlected(0)}}>

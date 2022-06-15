@@ -2,6 +2,7 @@ import './App.css';
 import Home from './Components/Home';
 import Stats from './Components/Stats';
 import Live from './Components/Live';
+import NewGame from './Components/NewGame';
 import SharedLayout from './Components/SharedLayout';
 import React, { useState, useEffect } from "react";
 import { useSelector } from 'react-redux';
@@ -73,16 +74,17 @@ const mlist = [
 
 function App() {
   const {cartItems} = useSelector((store) => store.cart);
-  const [matchList, setMatchList] = useState([{}]);
+  const [matchList, setMatchList] = useState([]);
+  const [memberList, setMemberList] = useState([]);
 
-
-  // Read all matches
+  // Read all members
   useEffect(() => {
-    axios.get('http://localhost:8000/matches/')
+    axios.get('http://localhost:8000/api/members/')
       .then(res => {
-        setMatchList(res.data)
+        setMemberList(res.data)
       })
   });
+
 
   return (
     <>
@@ -90,9 +92,10 @@ function App() {
         <Routes>
           <Route path='/' element={<SharedLayout />} >
             <Route index element={<Home data={mlist} />} />
-            <Route path="stats" element={<Stats />} />
+            <Route path="stats" element={<Stats data={memberList} />} />
             <Route path="live" element={<Live />} />
           </Route>
+          <Route path="newgame" element={<NewGame data={memberList} />} />
         </Routes>
       </BrowserRouter>
     </>

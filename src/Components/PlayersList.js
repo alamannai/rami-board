@@ -1,18 +1,19 @@
-import PlayerSection from './PlayerSection';
+import ParticSection from './ParticSection';
 
-function MemberList(props) {
+function PlayersList(props) {
     return (
-        <div >
+        <>
             <ul className=''>
                 {props.memberList.map(member =>
                     <li key={member.name} className='w-full lg:w-96 bg-[#662266] bg-gradient-to-r from-gray-500 
-                    to-[#662266] mt-4 rounded-lg '> <PlayerSection  name={member.name} />
+                    to-[#662266] mt-4 rounded-lg '>
+                         <ParticSection key={member.name} name={member.name} />
                     </li>
                     
                      )}
             </ul>
-        </div>
+        </>
     )
 }
 
-export default MemberList;
+export default PlayersList;
