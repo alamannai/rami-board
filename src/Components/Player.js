@@ -3,8 +3,6 @@ import PlayerSection from './PlayerSection';
 import ContentSection from './ContentSection';
 
 
- 
-
 function Player({id,name,score}) {
   return (
       <div className='grid grid-rows-2 w-96 h-40 bg-[#662266] bg-gradient-to-r from-gray-500 
